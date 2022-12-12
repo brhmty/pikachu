@@ -1,0 +1,308 @@
+:root {
+  --pikachu-color: #f9f91f;
+  --pikachu-shadow-color: #e0e006;
+  --pikachu-tail-color: #944207;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(
+    circle,
+    rgba(254, 82, 158, 1) 0%,
+    rgba(181, 23, 44, 1) 100%
+  );
+  overflow: hidden;
+}
+
+.pikachu {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 25vh;
+  position: relative;
+  transition: transform 1s ease-in-out 0ms;
+}
+
+.pikachu * {
+  position: absolute;
+}
+
+.pikachu:hover {
+  transform: scale(1.5);
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.head {
+  width: 30%;
+  height: 30%;
+  background-color: var(--pikachu-color);
+  left: 100px;
+  border-radius: 35% 35% 40% 40%;
+  border-bottom: 2px solid transparent;
+  border-bottom-color: var(--pikachu-shadow-color);
+  z-index: 2;
+  animation: pikachu 2s ease 1s infinite;
+}
+
+.head:before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  width: 20px;
+  height: 60px;
+  background-color: black;
+  border-radius: 100% 100% 40% 40%;
+  transform: rotate(-45deg);
+}
+
+.head:after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -20px;
+  width: 20px;
+  height: 60px;
+  background-color: black;
+  border-radius: 100% 100% 40% 40%;
+  transform: rotate(45deg);
+  z-index: inherit;
+}
+
+.ear {
+  content: "";
+  position: absolute;
+  top: -30px;
+  width: 20px;
+  height: 50px;
+  background-color: var(--pikachu-color);
+  border-radius: 70% 30% 0% 0%;
+}
+
+.ear.left {
+  left: -15px;
+  transform: rotate(-45deg);
+}
+
+.ear.right {
+  right: -15px;
+  transform: rotate(45deg);
+  z-index: 3;
+}
+
+.eye {
+  width: 15%;
+  height: 15%;
+  background-color: black;
+  border-radius: 45% 45% 50% 50%;
+}
+
+.eye.left {
+  top: 30px;
+  left: 14px;
+  transform: skew(-10deg);
+}
+
+.eye.right {
+  top: 30px;
+  right: 14px;
+  transform: skew(10deg);
+}
+
+.pupil {
+  width: 7%;
+  height: 7%;
+  background-color: white;
+  border-radius: 45% 45% 50% 50%;
+}
+
+.pupil.left {
+  top: 31px;
+  left: 20px;
+  transform: skew(-10deg);
+}
+
+.pupil.right {
+  top: 31px;
+  right: 20px;
+  transform: skew(10deg);
+}
+
+.blush {
+  width: 25%;
+  height: 35%;
+  background-color: red;
+  border-radius: 45% 45% 50% 50%;
+}
+
+.blush.left {
+  top: 45px;
+  left: 0px;
+  transform: skew(10deg);
+}
+
+.blush.right {
+  top: 45px;
+  right: 0px;
+  transform: skew(-10deg);
+}
+
+.nose {
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  border-top: 2px solid black;
+  border-bottom: 0;
+  top: 45px;
+  left: 43px;
+}
+
+.mouth {
+  height: 20px;
+  width: 20px;
+  top: 40px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  border-radius: 0% 0% 100% 80%;
+}
+
+.mouth.right {
+  left: 38px;
+  transform: skew(30deg);
+}
+
+.mouth.left {
+  right: 36px;
+  transform: skew(-30deg);
+}
+
+.body {
+  width: 35%;
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--pikachu-color);
+  top: 60px;
+  left: 92px;
+  border-radius: 35% 35% 30% 30%;
+  border: 1px solid transparent;
+  border-bottom-color: var(--pikachu-shadow-color);
+  z-index: 1;
+}
+
+.arm {
+  width: 7%;
+  height: 17%;
+  background-color: var(--pikachu-color);
+  border-radius: 40% 40% 40% 40%;
+  border: 2px solid transparent;
+  border-left-color: var(--pikachu-shadow-color);
+  border-right-color: var(--pikachu-shadow-color);
+  border-bottom-color: var(--pikachu-shadow-color);
+  top: 85px;
+  z-index: 1;
+}
+
+.arm.left {
+  left: 97px;
+  transform: skew(10deg);
+}
+
+.arm.right {
+  right: 109px;
+  transform: skew(-10deg);
+}
+
+.foot {
+  width: 5%;
+  height: 8%;
+  background-color: var(--pikachu-color);
+  border-radius: 45% 45% 50% 50%;
+  top: 170px;
+}
+
+.foot.left {
+  left: 110px;
+  transform: rotate(50deg);
+}
+
+.foot.right {
+  right: 120px;
+  transform: rotate(-50deg);
+}
+
+.tail {
+  width: 30%;
+  height: 40%;
+  right: 20px;
+  top: 20px;
+  animation-name: pikachu;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+#tail1 {
+  width: 31px;
+  height: 15px;
+  background-color: var(--pikachu-tail-color);
+  bottom: 5px;
+  transform: skewY(5deg);
+}
+
+#tail2 {
+  width: 15px;
+  height: 30px;
+  background-color: var(--pikachu-tail-color);
+  bottom: 8px;
+  left: 15px;
+  transform: skew(8deg);
+}
+
+#tail3 {
+  width: 34px;
+  height: 13px;
+  background-color: var(--pikachu-color);
+  bottom: 28px;
+  left: 13px;
+  transform: skewY(15deg);
+}
+
+#tail4 {
+  width: 20px;
+  height: 40px;
+  background-color: var(--pikachu-color);
+  bottom: 28px;
+  left: 24px;
+  transform: skew(10deg);
+}
+
+#tail5 {
+  width: 50px;
+  height: 33px;
+  background-color: var(--pikachu-color);
+  bottom: 59px;
+  left: 21px;
+  transform: skewY(9deg);
+}
+
+@keyframes pikachu {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
