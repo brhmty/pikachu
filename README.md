@@ -1,6 +1,6 @@
 #Pikachu Project
 
-I have only used HTML/CSS. A simple project.
+I have only used HTML and CSS. A simple project.
 
 <img src='/pikachu.jpg'/>
 
